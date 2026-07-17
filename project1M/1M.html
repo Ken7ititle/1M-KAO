@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter App</title>
+    <link rel="stylesheet" href="1M.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ================= Page 1 ================= -->
+    <section class="page active" id="page1">
+
+        <h1 class="title">
+            ก๊อกๆ เติ้ลมีอะไรจะบอกคับ
+        </h1>
+
+        <div class="envelope">
+            <img src="images/envelope.png" alt="Envelope">
+        </div>
+
+        <button onclick="goToPage('page2')">Start</button>
+
+    </section>
+
+    <!-- ================= Page 2 ================= -->
+    <section class="page" id="page2">
+
+        <div class="open-envelope">
+            <img src="images/letter.png" alt="Letter">
+        </div>
+
+        <button onclick="goToPage('page3')">Next</button>
+
+    </section>
+
+    <!-- ================= Page 3 ================= -->
+    <section class="page" id="page3">
+
+        <img class="memory-box" src="images/box.png" alt="Memory Box">
+
+        <div class="letter-card">
+
+            <h3>To. เก้า</h3>
+            <h3>Dear. เติ้ล</h3>
+
+            <p>
+                ฮั่นแน่... เปิดอ่านอยู่ละสิ! ❤️
+                <br><br>
+
+                สุขสันต์ครบรอบ 1 เดือนนะเก้า
+
+                <br><br>
+
+                ขอบคุณที่ผ่านอะไรมาด้วยกัน
+                ขอบคุณที่เลือกเติ้ลเข้ามาเป็นส่วนหนึ่งในชีวิต
+
+                <br><br>
+
+                ถึงบางครั้งเติ้ลจะทำตัวไม่น่ารัก
+                แต่เติ้ลอยากให้เก้าให้อภัย
+
+                <br><br>
+
+                แล้วจับมือไปโตด้วยกันนะ 🤍
+            </p>
+
+            <h2>เค้ารักเก้านะ</h2>
+            <h3>จาก เติ้ล</h3>
+
+        </div>
+
+        <button onclick="goToPage('page4')">Next</button>
+
+    </section>
+
+    <!-- ================= Page 4 ================= -->
+    <section class="page" id="page4">
+
+        <img class="gallery" src="images/gallery.png" alt="Gallery">
+
+        <button onclick="goToPage('page5')">Next</button>
+
+    </section>
+
+    <!-- ================= Page 5 ================= -->
+    <section class="page" id="page5">
+
+        <img class="polaroid" src="images/polaroid.png" alt="Polaroid">
+
+        <button onclick="goToPage('page6')">Next</button>
+
+    </section>
+
+    <!-- ================= Page 6 ================= -->
+    <section class="page" id="page6">
+
+        <div class="thank-card">
+
+            <h2>(づ｡◕‿‿◕｡)づ♡</h2>
+
+            <h2>
+                ขอบคุณ<br>
+                ที่เข้ามาในชีวิตนะ
+            </h2>
+
+            <p>
+                อยู่ด้วยกันไปนาน ๆ นะ ❤️
+            </p>
+
+            <button onclick="goToPage('page1')">
+                Home
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+
+function goToPage(pageId){
+
+    // ซ่อนทุกหน้า
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    // แสดงหน้าที่เลือก
+    document.getElementById(pageId).classList.add("active");
+
+    // เลื่อนไปด้านบน
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
